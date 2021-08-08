@@ -1,7 +1,7 @@
 import * as S from "./styles";
 
 type Props = {
-  onClickAction: () => void;
+  handleClick: () => void;
   children: React.ReactNode;
   size: "SM" | "MD" | "LG";
   primary?: boolean;
@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function Button({
-  onClickAction,
+  handleClick,
   children,
   size = "SM",
   primary,
@@ -19,7 +19,7 @@ export default function Button({
 }: Props) {
   return (
     <S.Button
-      onClick={onClickAction}
+      onClick={handleClick}
       size={size}
       primary={primary}
       secondary={secondary}
