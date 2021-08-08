@@ -2,6 +2,7 @@ export type Theme = {
   colors: {
     primary: string,
     primaryHover: string,
+    primaryDark: string,
     secondary: string,
     mainBg: string,
     boxBg: string,

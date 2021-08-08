@@ -13,9 +13,9 @@ export const Button = styled.button<Props>`
   cursor: pointer;
   border-radius: 25px;
   padding: ${({ theme, size }: Props) => {
-    if (size === "LG") return `1.3rem ${theme.spacings.large}`;
-    if (size === "MD") return `1.3rem ${theme.spacings.medium}`;
-    return `1.3rem ${theme.spacings.small}`;
+    if (size === "LG") return `1rem ${theme.spacings.large}`;
+    if (size === "MD") return `1rem ${theme.spacings.medium}`;
+    return `1rem ${theme.spacings.small}`;
   }};
   background: ${({ theme, primary, secondary, tertiary }: Props) => {
     if (primary) return theme.colors.primary;
@@ -23,7 +23,7 @@ export const Button = styled.button<Props>`
     if (tertiary) return theme.colors.white;
   }};
   color: ${({ theme, primary, secondary, tertiary }: Props) => {
-    if (primary || secondary) return theme.colors.white;
+    if (primary || secondary) return theme.colors.primaryDark;
     if (tertiary) return theme.colors.primary;
   }};
   border: ${({ theme, primary, secondary, tertiary }: Props) => {

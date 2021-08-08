@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import media from "styled-media-query";
 
 import { Theme } from "../../types/theme";
 
@@ -40,13 +41,15 @@ export const SidebarItemsLinks = styled.a`
   cursor: pointer;
   transition: all 0.7s ease;
   color: ${({ theme, isOpen }: Props) =>
-    isOpen ? theme.colors.white : 'transparent'};
-  margin-left:  ${({ isOpen }: Props) =>
-    isOpen ? `0` : `-10em`};
-  
+    isOpen ? theme.colors.white : "transparent"};
+  margin-left: ${({ isOpen }: Props) => (isOpen ? `0` : `-10em`)};
 
   &:active {
     background: ${({ theme }: Omit<Props, "isOpen">) => theme.colors.white};
     color: ${({ theme }: Omit<Props, "isOpen">) => theme.colors.primary};
   }
+
+  ${media.greaterThan("medium")`
+    display: none;
+  `}
 `;
