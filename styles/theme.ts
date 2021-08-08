@@ -1,4 +1,4 @@
-export default {
+const theme = {
   colors: {
     primary: "#73D3FC",
     primaryHover: "#73D3FC",
@@ -10,4 +10,15 @@ export default {
     black: "#000000",
     gray: "#C2C2C2",
   },
-};
+  spacings: {
+    xxsmall: '0.8rem',
+    xsmall: '1.6rem',
+    small: '2.4rem',
+    medium: '3.2rem',
+    large: '6.0rem',
+    xlarge: '6.4rem',
+    xxlarge: '12.8rem'
+  }
+}
+
+export default theme;
