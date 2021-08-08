@@ -13,10 +13,10 @@ const MobileSidebar = React.forwardRef<HTMLDivElement, Props>(
     <S.Container isOpen={isOpen} ref={ref}>
       <S.SidebarButtonsContainer isOpen={isOpen}>
         <Link href="/register" passHref>
-          <S.SidebarItemsLinks>Criar conta</S.SidebarItemsLinks>
+          <S.SidebarItemsLinks isOpen={isOpen}>Criar conta</S.SidebarItemsLinks>
         </Link>
         <Link href="/login" passHref>
-          <S.SidebarItemsLinks>Login</S.SidebarItemsLinks>
+          <S.SidebarItemsLinks isOpen={isOpen}>Login</S.SidebarItemsLinks>
         </Link>
       </S.SidebarButtonsContainer>
     </S.Container>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
@@ -10,15 +11,16 @@ import Navbar from "../components/Navbar";
 import MobileSidebar from "../components/MobileSidebar";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
+  // hide sidebar if user clicks outside it
   useEffect(() => {
     const checkIfClickedOutsideSidebar = (e: React.MouseEvent): void => {
-      // If the menu is open and the clicked target is not within the menu,
-      // then close the menu
       if (
         isMobileMenuOpen &&
         sidebarRef.current &&
@@ -34,6 +36,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       document.removeEventListener("mousedown", checkIfClickedOutsideSidebar);
     };
   }, [isMobileMenuOpen]);
+
+  // hide sidebar every time that route changes
+  useEffect(() => setIsMobileMenuOpen(false), [router])
 
   return (
     <>

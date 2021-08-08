@@ -14,6 +14,7 @@ export const Container = styled.div`
     if (!isOpen) return `width: 0px`;
   }};
 
+  position: absolute;
   z-index: 9999;
   background: ${({ theme }: Props) => theme.colors.primary};
   height: calc(100vh - 5em);
@@ -27,7 +28,6 @@ export const SidebarButtonsContainer = styled.div`
   flex-wrap: nowrap;
   padding: 1em;
   gap: 0.5em;
-  color: ${({ theme }: Props) => theme.colors.white};
   width: ${({ isOpen }: Props) => (isOpen ? `50vw` : `0`)};
   transition: width 0.5s;
 `;
@@ -38,6 +38,12 @@ export const SidebarItemsLinks = styled.a`
   padding: 0.5em;
   border-radius: 20px;
   cursor: pointer;
+  transition: all 0.7s ease;
+  color: ${({ theme, isOpen }: Props) =>
+    isOpen ? theme.colors.white : 'transparent'};
+  margin-left:  ${({ isOpen }: Props) =>
+    isOpen ? `0` : `-10em`};
+  
 
   &:active {
     background: ${({ theme }: Omit<Props, "isOpen">) => theme.colors.white};
