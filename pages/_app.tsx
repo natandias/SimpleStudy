@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [isMobileMenuOpen]);
 
   // hide sidebar every time that route changes
-  useEffect(() => setIsMobileMenuOpen(false), [router])
+  useEffect(() => setIsMobileMenuOpen(false), [router]);
 
   return (
     <>
