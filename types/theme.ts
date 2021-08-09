@@ -4,6 +4,7 @@ export type Theme = {
     primaryHover: string,
     primaryDark: string,
     secondary: string,
+    secondaryDark: string,
     mainBg: string,
     boxBg: string,
     texts: string,

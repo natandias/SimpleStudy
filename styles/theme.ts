@@ -4,6 +4,7 @@ const theme = {
     primaryHover: "#045F86",
     primaryDark: "#09364E",
     secondary: "#6AD79C",
+    secondaryDark: "#46CE85", 
     mainBg: "#030518",
     boxBg: "#FAFAFA",
     texts: "#030517",
