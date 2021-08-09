@@ -4,7 +4,7 @@ type Props = {
   handleClick: () => void;
   children: React.ReactNode;
   className?: string,
-  size: "SM" | "MD" | "LG";
+  size?: "SM" | "MD" | "LG";
   primary?: boolean;
   secondary?: boolean;
   tertiary?: boolean;
