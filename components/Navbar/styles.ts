@@ -10,6 +10,9 @@ type Props = {
 };
 
 export const Navbar = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 9999;
   background: ${({ theme }: Props) => theme.colors.primary};
   width: 100%;
   height: 5em;

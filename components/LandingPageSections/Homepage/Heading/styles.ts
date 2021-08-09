@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import media from "styled-media-query";
 
-import { Theme } from "../../../types/theme";
-import Button from "../../Button";
+import { Theme } from "../../../../types/theme";
+import Button from "../../../Button";
 
 type Props = {
   theme: Theme;
@@ -40,7 +40,7 @@ export const CreateAccountButton = styled(Button)`
 `;
 
 export const GreyFooter = styled.div`
-  background: grey;
+  background: ${({ theme }: Props) => theme.colors.gray};
   width: 100%;
   height: 3em;
   position: absolute;
