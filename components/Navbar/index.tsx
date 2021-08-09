@@ -13,9 +13,9 @@ export default function Navbar({ isMobileMenuOpen, toggleMobileMenu }: Props) {
 
   const navigateToHome = () => router.push("/");
 
-  const createAccount = () => router.push("/register");
+  const navigateToCreateAccount = () => router.push("/register");
 
-  const login = () => router.push("/login");
+  const navigateToLogin = () => router.push("/login");
 
   return (
     <S.Navbar>
@@ -30,10 +30,10 @@ export default function Navbar({ isMobileMenuOpen, toggleMobileMenu }: Props) {
       <S.NavbarTitle onClick={navigateToHome}>Simple Study</S.NavbarTitle>
 
       <S.NavbarActionButtons>
-        <Button handleClick={createAccount} size="SM" secondary>
+        <Button handleClick={navigateToCreateAccount} size="SM" secondary>
           Criar conta
         </Button>
-        <Button handleClick={login} size="SM" tertiary>
+        <Button handleClick={navigateToLogin} size="SM" tertiary>
           Login
         </Button>
       </S.NavbarActionButtons>

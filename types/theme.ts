@@ -9,6 +9,7 @@ export type Theme = {
     texts: string,
     white: string,
     black: string,
+    darkGray: string,
     gray: string,
   }
   spacings: {

@@ -9,6 +9,7 @@ const theme = {
     texts: "#030517",
     white: "#FFFFFF",
     black: "#000000",
+    darkGray: "#595959",
     gray: "#C2C2C2",
   },
   spacings: {

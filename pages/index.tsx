@@ -1,7 +1,9 @@
+import { Heading } from "../components/LandingPageSections";
+
 export default function Home() {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Heading />
+    </>
   );
 }
