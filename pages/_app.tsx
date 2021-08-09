@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // hide sidebar if user clicks outside it
   useEffect(() => {
-    const checkIfClickedOutsideSidebar = (e: React.MouseEvent): void => {
+    const checkIfClickedOutsideSidebar = (e: MouseEvent): void => {
       if (
         isMobileMenuOpen &&
         sidebarRef.current &&
