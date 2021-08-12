@@ -3,7 +3,7 @@ import * as S from "./styles";
 
 export default function MiddleSection() {
   return (
-    <S.Container>
+    <S.MiddleSectionContainer>
       <S.FirstSection>
         <p>Totalmente gratuito e de código aberto</p>
       </S.FirstSection>
@@ -15,7 +15,7 @@ export default function MiddleSection() {
           <Image
             src={"/images/girl_reading.svg"}
             alt="Garota sentada no desenho de um número 0 com uma carinha no meio, o 0 faz parte de um desenho caricato do número 404"
-            layout="fixed"
+            layout="intrinsic"
             width={800}
             height={700}
           />
@@ -23,6 +23,6 @@ export default function MiddleSection() {
       </S.SecondSection>
 
       <S.ThirdSection></S.ThirdSection>
-    </S.Container>
+    </S.MiddleSectionContainer>
   );
 }

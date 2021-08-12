@@ -10,7 +10,7 @@ type Props = {
 
 const MobileSidebar = React.forwardRef<HTMLDivElement, Props>(
   ({ isOpen }, ref) => (
-    <S.Container isOpen={isOpen} ref={ref}>
+    <S.Sidebar isOpen={isOpen} ref={ref}>
       <S.SidebarButtonsContainer isOpen={isOpen}>
         <Link href="/register" passHref>
           <S.SidebarItemsLinks isOpen={isOpen}>Criar conta</S.SidebarItemsLinks>
@@ -19,7 +19,7 @@ const MobileSidebar = React.forwardRef<HTMLDivElement, Props>(
           <S.SidebarItemsLinks isOpen={isOpen}>Login</S.SidebarItemsLinks>
         </Link>
       </S.SidebarButtonsContainer>
-    </S.Container>
+    </S.Sidebar>
   )
 );
 

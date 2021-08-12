@@ -8,7 +8,7 @@ type Props = {
   theme: Theme;
 };
 
-export const Container = styled.div`
+export const HeadingContainer = styled.div`
   height: calc(100vh - 5em);
   background: url("/images/girl_studying.svg") no-repeat;
   background-position: right -18em top 10%;

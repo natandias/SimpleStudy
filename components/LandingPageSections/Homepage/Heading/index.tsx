@@ -8,7 +8,7 @@ export default function Heading() {
   const navigateToCreateAccount = () => router.push("/register");
 
   return (
-    <S.Container>
+    <S.HeadingContainer>
       <S.TextBox>
         <S.Title>
           Perdendo a data de entrega de suas atividades escolares?
@@ -22,6 +22,6 @@ export default function Heading() {
         Criar conta gratuitamente
       </S.CreateAccountButton>
       <S.GreyFooter />
-    </S.Container>
+    </S.HeadingContainer>
   );
 }
