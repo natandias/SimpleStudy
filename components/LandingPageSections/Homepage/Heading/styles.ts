@@ -9,9 +9,9 @@ type Props = {
 };
 
 export const HeadingContainer = styled.div`
-  height: calc(100vh - 5em);
+  height: calc(100vh - 2em);
   background: url("/images/girl_studying.svg") no-repeat;
-  background-position: right -18em top 10%;
+  background-position: right -18em top 30%;
   position: relative;
 
   ${media.lessThan("medium")`
@@ -21,7 +21,7 @@ export const HeadingContainer = styled.div`
 
 export const TextBox = styled.div`
   padding: 2em;
-  padding-top: 20%;
+  padding-top: 30%;
 
   ${media.greaterThan("medium")`
     max-width: 60vw;

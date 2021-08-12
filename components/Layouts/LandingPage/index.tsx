@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import Navbar from "../../Navbar";
 import MobileSidebar from "../../MobileSidebar";
 
+import * as S from "./styles";
+
 type Props = {
   children: React.ReactNode;
 };
@@ -45,7 +47,7 @@ export default function LandingPageLayout({ children }: Props) {
         toggleMobileMenu={toggleMobileMenu}
       />
       <MobileSidebar isOpen={isMobileMenuOpen} ref={sidebarRef} />
-      <main>{children}</main>
+      <S.MainSection>{children}</S.MainSection>
     </>
   );
 }

@@ -5,7 +5,7 @@ export default function MiddleSection() {
   return (
     <S.MiddleSectionContainer>
       <S.FirstSection>
-        <p>Totalmente gratuito e de código aberto</p>
+        <S.FirstSectionText>Totalmente gratuito e de código aberto</S.FirstSectionText>
       </S.FirstSection>
       <S.SecondSection>
         <S.SecondSectionText>

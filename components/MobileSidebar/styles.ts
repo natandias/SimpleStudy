@@ -10,7 +10,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const Sidebar = styled.div`
+export const Sidebar = styled.aside`
   ${({ isOpen }: Props) => {
     if (!isOpen) return `width: 0px`;
   }};

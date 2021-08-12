@@ -9,7 +9,7 @@ type Props = {
   theme: Theme;
 };
 
-export const Navbar = styled.div`
+export const Navbar = styled.nav`
   position: fixed;
   top: 0;
   z-index: 9999;
