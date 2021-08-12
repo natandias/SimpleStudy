@@ -12,6 +12,7 @@ export const Container = styled.div`
   height: calc(100vh - 5em);
   background: url("/images/girl_studying.svg") no-repeat;
   background-position: right -18em top 10%;
+  position: relative;
 
   ${media.lessThan("medium")`
     background-position: right -28em top 52%;

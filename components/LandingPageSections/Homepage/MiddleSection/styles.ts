@@ -9,13 +9,8 @@ type Props = {
 
 export const Container = styled.div`
   height: calc(100vh - 5em);
-`;
-
-export const ImageContainer = styled.div`
-  position: absolute;
-  right: 0;
-  z-index: 10;
-  margin-top: 29vh;
+  /* background: url("/images/girl_reading.svg") no-repeat;
+  background-position: right -18em top 10%; */
 `;
 
 export const FirstSection = styled.div`
@@ -33,12 +28,34 @@ export const FirstSection = styled.div`
 export const SecondSection = styled.div`
   height: 45%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: ${({ theme }: Props) => theme.colors.black};
   font-size: 2rem;
   padding: 1em;
+
+  ${media.lessThan("medium")`
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  `}
+`;
+
+export const SecondSectionText = styled.p`
   width: 45vw;
+
+  ${media.lessThan("medium")`
+    width: 100vw;
+    text-align: center;
+  `}
+`;
+
+export const ImageContainer = styled.div`
+  z-index: 999;
+
+  ${media.greaterThan("medium")`
+    margin-right: -6em;
+  `}
 `;
 
 export const ThirdSection = styled.div`
