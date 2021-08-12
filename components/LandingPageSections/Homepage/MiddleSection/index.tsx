@@ -5,7 +5,9 @@ export default function MiddleSection() {
   return (
     <S.MiddleSectionContainer>
       <S.FirstSection>
-        <S.FirstSectionText>Totalmente gratuito e de código aberto</S.FirstSectionText>
+        <S.FirstSectionText>
+          Totalmente gratuito e de código aberto
+        </S.FirstSectionText>
       </S.FirstSection>
       <S.SecondSection>
         <S.SecondSectionText>
@@ -14,15 +16,15 @@ export default function MiddleSection() {
         <S.ImageContainer>
           <Image
             src={"/images/girl_reading.svg"}
-            alt="Garota sentada no desenho de um número 0 com uma carinha no meio, o 0 faz parte de um desenho caricato do número 404"
+            alt="Garota lendo um livro enquanto se encontrada sentada em cima de outros três livros"
             layout="intrinsic"
-            width={800}
-            height={700}
+            width={700}
+            height={600}
           />
         </S.ImageContainer>
       </S.SecondSection>
 
-      <S.ThirdSection></S.ThirdSection>
+      <S.ThirdSection />
     </S.MiddleSectionContainer>
   );
 }

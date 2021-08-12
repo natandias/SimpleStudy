@@ -7,19 +7,18 @@ type Props = {
   theme: Theme;
 };
 
-export const MiddleSectionContainer = styled.div`
-  height: calc(100vh + 24em);
-  position: relative;
+export const QuestionSectionContainer = styled.div`
+  height: 100vh;
 `;
 
 export const FirstSection = styled.section`
-  background: ${({ theme }: Props) => theme.colors.gray};
-  height: 40%;
+  background: ${({ theme }: Props) => theme.colors.primary};
+  height: 60%;
   clip-path: polygon(0% 89%, 100% 100%, 100% 0, calc(100vw - 99vw) 0%, 0% 0%);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${({ theme }: Props) => theme.colors.black};
+  color: ${({ theme }: Props) => theme.colors.white};
   font-size: 2rem;
   padding: 0 1em;
 `;
@@ -30,7 +29,7 @@ export const FirstSectionText = styled.p`
 `;
 
 export const SecondSection = styled.section`
-  height: 53%;
+  height: 40%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,12 +38,13 @@ export const SecondSection = styled.section`
   padding: 1em;
 
   ${media.lessThan("medium")`
+    height: auto;
     flex-wrap: wrap;
     justify-content: center;
   `}
 `;
 
-export const SecondSectionText = styled.p`
+export const SecondSectionInfoContainer = styled.p`
   width: 45vw;
 
   ${media.lessThan("medium")`
@@ -53,22 +53,21 @@ export const SecondSectionText = styled.p`
   `}
 `;
 
+export const SecondSectionTitle = styled.p`
+  color: ${({ theme }: Props) => theme.colors.primary};
+`;
+
+export const SecondSectionSocialMedia = styled.div`
+  display: flex;
+  flex-flow: column;
+  font-size: 1.4rem;
+  margin-top: 2em;
+`;
+
 export const ImageContainer = styled.div`
   z-index: 999;
 
   ${media.greaterThan("medium")`
     margin-right: -6em;
   `}
-`;
-
-export const ThirdSection = styled.section`
-  height: 10%;
-  background: ${({ theme }: Props) => theme.colors.primary};
-  clip-path: polygon(
-    0% 100%,
-    100% 100%,
-    100% 30px,
-    calc(100vw - 99vw) 0%,
-    0% 0%
-  );
 `;
