@@ -19,6 +19,7 @@ export const Container = styled.div`
   z-index: 9999;
   background: ${({ theme }: Props) => theme.colors.primary};
   height: calc(100vh - 5em);
+  margin-top: 5em;
   width: ${({ isOpen }: Props) => (isOpen ? `50vw` : `0`)};
   transition: width 0.5s;
 `;
