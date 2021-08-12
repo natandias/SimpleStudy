@@ -13,6 +13,8 @@ export const HeadingContainer = styled.div`
   background: url("/images/girl_studying.svg") no-repeat;
   background-position: right -18em top 30%;
   position: relative;
+  display: flex;
+  align-items: center;
 
   ${media.lessThan("medium")`
     background-position: right -28em top 52%;
@@ -21,7 +23,6 @@ export const HeadingContainer = styled.div`
 
 export const TextBox = styled.div`
   padding: 2em;
-  padding-top: 30%;
 
   ${media.greaterThan("medium")`
     max-width: 60vw;

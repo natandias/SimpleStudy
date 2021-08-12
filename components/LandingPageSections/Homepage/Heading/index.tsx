@@ -9,6 +9,7 @@ export default function Heading() {
 
   return (
     <S.HeadingContainer>
+      <div className="TextBoxContainer">
       <S.TextBox>
         <S.Title>
           Perdendo a data de entrega de suas atividades escolares?
@@ -21,6 +22,7 @@ export default function Heading() {
       <S.CreateAccountButton handleClick={navigateToCreateAccount} size="SM" secondary>
         Criar conta gratuitamente
       </S.CreateAccountButton>
+      </div>
       <S.GreyFooter />
     </S.HeadingContainer>
   );
