@@ -1,6 +1,7 @@
-import Heading from "../Homepage/Heading";
-import MiddleSection from "./MiddleSection";
-import QuestionSection from "./QuestionSection";
+import Heading from "./SectionOne";
+import MiddleSection from "./SectionTwo";
+import QuestionSection from "./SectionThree";
+import LastSection from "./SectionFour";
 
 export default function Homepage() {
   return (
@@ -8,6 +9,7 @@ export default function Homepage() {
       <Heading />
       <MiddleSection />
       <QuestionSection />
+      <LastSection />
     </>
   );
 }

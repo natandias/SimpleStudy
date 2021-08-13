@@ -9,6 +9,10 @@ type Props = {
 
 export const QuestionSectionContainer = styled.div`
   height: 100vh;
+
+  ${media.lessThan("medium")`
+    height: calc(100vh + 17em);
+  `}
 `;
 
 export const FirstSection = styled.section`
@@ -24,7 +28,7 @@ export const FirstSection = styled.section`
 `;
 
 export const FirstSectionText = styled.p`
-  margin-top: -2em;
+  margin-top: -4em;
   text-align: center;
 `;
 
@@ -67,7 +71,13 @@ export const SecondSectionSocialMedia = styled.div`
 export const ImageContainer = styled.div`
   z-index: 999;
 
+  ${media.lessThan("medium")`
+    background:  ${({ theme }: Props) => theme.colors.white};;
+    border-radius: 12px;
+  `}
+
   ${media.greaterThan("medium")`
     margin-right: -6em;
+    margin-top: -5em;
   `}
 `;

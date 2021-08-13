@@ -25,7 +25,7 @@ export const FirstSection = styled.section`
 `;
 
 export const FirstSectionText = styled.p`
-  margin-top: -2em;
+  margin-top: -1.6em;
   text-align: center;
 `;
 
