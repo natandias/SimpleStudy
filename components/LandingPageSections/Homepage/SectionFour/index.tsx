@@ -9,7 +9,7 @@ export default function LastSection() {
 
   return (
     <S.LastSectionContainer>
-      <div className="TextBoxContainer">
+      <S.TextBoxContainer>
         <S.TextBox>
           <S.Title>
             Quer ver como o Simple Study pode resolver os seus problemas?
@@ -23,7 +23,7 @@ export default function LastSection() {
         >
           Criar conta gratuitamente
         </S.CreateAccountButton>
-      </div> 
+      </S.TextBoxContainer> 
     </S.LastSectionContainer>
   );
 }

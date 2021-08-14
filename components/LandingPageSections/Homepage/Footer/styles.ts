@@ -17,6 +17,10 @@ export const FooterContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 1em 2em;
+
+  ${media.lessThan("medium")`
+    flex-direction: column;
+  `}
 `;
 
 export const Title = styled.p`
@@ -24,6 +28,7 @@ export const Title = styled.p`
   font-size: 1.4rem;
 
   ${media.lessThan("medium")`
+    margin: auto;
     margin-bottom: 1em;
   `}
 `;
@@ -35,7 +40,10 @@ export const LinksContainer = styled.div`
 
   ${media.lessThan("medium")`
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.2em;
+    text-align: center;
+    margin: auto;
+    margin-top: 1em;
   `}
 `;
 

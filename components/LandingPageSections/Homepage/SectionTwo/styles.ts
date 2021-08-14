@@ -15,7 +15,7 @@ export const MiddleSectionContainer = styled.div`
 export const FirstSection = styled.section`
   background: ${({ theme }: Props) => theme.colors.gray};
   height: 40%;
-  clip-path: polygon(0% 89%, 100% 100%, 100% 0, calc(100vw - 99vw) 0%, 0% 0%);
+  clip-path: polygon(0% 94%, 100% 100%, 100% 0, calc(100vw - 99vw) 0%, 0% 0%);
   display: flex;
   justify-content: center;
   align-items: center;

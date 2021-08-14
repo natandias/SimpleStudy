@@ -15,7 +15,6 @@ export const LastSectionContainer = styled.div`
   background-color: ${({ theme }: Props) => theme.colors.secondary};
   position: relative;
   display: flex;
-  align-items: center;
 
   ${media.lessThan("medium")`
     background: none;
@@ -23,6 +22,13 @@ export const LastSectionContainer = styled.div`
     height: 100vh;
     margin-top: 13em;
     padding-bottom: 16em;
+    align-items: center;
+  `}
+`;
+
+export const TextBoxContainer = styled.div`
+  ${media.lessThan("medium")`
+    text-align: center;
   `}
 `;
 
@@ -44,5 +50,7 @@ export const SubTitle = styled.h2`
 `;
 
 export const CreateAccountButton = styled(Button)`
-  margin-left: 2em;
+  ${media.greaterThan("medium")`
+    margin-left: 2em;
+  `}
 `;
