@@ -32,7 +32,7 @@ export const FirstSectionText = styled.p`
 export const SecondSection = styled.section`
   height: 53%;
   display: flex;
-  justify-content: space-between;
+  justify-content:  space-around;
   align-items: center;
   color: ${({ theme }: Props) => theme.colors.black};
   font-size: 2rem;
@@ -55,10 +55,6 @@ export const SecondSectionText = styled.p`
 
 export const ImageContainer = styled.div`
   z-index: 999;
-
-  ${media.greaterThan("medium")`
-    margin-right: -6em;
-  `}
 `;
 
 export const ThirdSection = styled.section`

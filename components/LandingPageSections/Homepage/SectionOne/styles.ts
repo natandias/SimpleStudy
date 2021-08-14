@@ -17,7 +17,7 @@ export const HeadingContainer = styled.div`
   align-items: center;
 
   ${media.lessThan("medium")`
-    background-position: right -28em top 52%;
+    background-position: right -32em top 36%;
   `}
 `;
 

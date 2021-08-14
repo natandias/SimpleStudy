@@ -77,7 +77,7 @@ export const ImageContainer = styled.div`
   `}
 
   ${media.greaterThan("medium")`
-    margin-right: -6em;
+    margin-right: -3em;
     margin-top: -5em;
   `}
 `;

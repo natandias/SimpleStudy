@@ -22,6 +22,7 @@ export const LastSectionContainer = styled.div`
     height: 100vh;
     margin-top: 13em;
     padding-bottom: 16em;
+    padding-top: 1em;
     align-items: center;
   `}
 `;

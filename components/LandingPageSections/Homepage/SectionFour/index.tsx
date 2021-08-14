@@ -14,7 +14,7 @@ export default function LastSection() {
           <S.Title>
             Quer ver como o Simple Study pode resolver os seus problemas?
           </S.Title>
-          <S.SubTitle>Comece sua experiência agora mesmo !</S.SubTitle>
+          <S.SubTitle>Comece sua experiência agora mesmo</S.SubTitle>
         </S.TextBox>
         <S.CreateAccountButton
           handleClick={navigateToCreateAccount}
