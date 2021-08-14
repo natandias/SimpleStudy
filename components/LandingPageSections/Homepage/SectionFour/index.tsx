@@ -23,10 +23,7 @@ export default function LastSection() {
         >
           Criar conta gratuitamente
         </S.CreateAccountButton>
-      </div>
-      <S.Footer> 
-        Simple Study
-      </S.Footer>
+      </div> 
     </S.LastSectionContainer>
   );
 }

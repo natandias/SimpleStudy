@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import media from "styled-media-query";
-import theme from "../../../../styles/theme";
 
 import { Theme } from "../../../../types/theme";
 import Button from "../../../Button";
@@ -22,7 +21,8 @@ export const LastSectionContainer = styled.div`
     background: none;
     background-color: ${({ theme }: Props) => theme.colors.secondary};
     height: 100vh;
-    margin-top: 8em;
+    margin-top: 13em;
+    padding-bottom: 16em;
   `}
 `;
 
@@ -45,12 +45,4 @@ export const SubTitle = styled.h2`
 
 export const CreateAccountButton = styled(Button)`
   margin-left: 2em;
-`;
-
-export const Footer = styled.div`
-  background: ${({ theme }: Props) => theme.colors.primary};
-  width: 100%;
-  height: 5em;
-  position: absolute;
-  bottom: 0;
 `;
