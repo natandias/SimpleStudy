@@ -24,41 +24,46 @@ export default function Login() {
   };
 
   return (
-    <S.LoginContainer>
+    <S.Container>
       <S.MainSection>
         <S.FormTitle>Entre com seu email e senha</S.FormTitle>
-        <S.LoginForm ref={formRef} onSubmit={handleSubmit(onSubmit)}>
+        <S.Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
           <div className="field">
-            <label className="label">Email</label>
+            <label className="label" htmlFor="email">Email</label>
             <div className="control">
               <input
-                className="input"
+                id="email"
+                aria-invalid={errors.email ? "true" : "false"}
+                className="input is-rounded"
                 type="email"
                 placeholder="Email"
-                {...register("email", { required: true })}
+                {...register("email", { required: "Email é obrigatório!" })}         
               />
               {errors.email && (
-                <S.FormErrorText>Email é obrigatório!</S.FormErrorText>
+                <S.FormErrorText role="alert">{errors?.email?.message}</S.FormErrorText>
               )}
             </div>
           </div>
 
           <div className="field">
-            <label className="label">Senha</label>
+            <label className="label" htmlFor="password">Senha</label>
             <div className="control">
               <input
-                className="input"
+                id="password"
+                aria-invalid={errors.password ? "true" : "false"}
+                className="input is-rounded"
                 type="password"
                 placeholder="Senha"
-                {...register("password", { required: true, minLength: 5 })}
+                {...register("password", {
+                  required: "Senha é obrigatória",
+                  minLength: {
+                    value: 5,
+                    message: "Senha deve ter ao mínimo 5 caracteres",
+                  },
+                })}
               />
               {errors.password && (
-                <S.FormErrorText>
-                  {errors.password?.type === "minLength"
-                    ? "Senha deve ter ao mínimo 5 caracteres"
-                    : "Senha é obrigatória"}
-                  !
-                </S.FormErrorText>
+                <S.FormErrorText role="alert">{errors?.password?.message}</S.FormErrorText>
               )}
             </div>
           </div>
@@ -83,8 +88,8 @@ export default function Login() {
           <Link href="/forgot-password" passHref>
             <S.ForgotPasswordLink>Esqueceu sua senha?</S.ForgotPasswordLink>
           </Link>
-        </S.LoginForm>
+        </S.Form>
       </S.MainSection>
-    </S.LoginContainer>
+    </S.Container>
   );
 }
