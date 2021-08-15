@@ -1,16 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Congratulations from "./Congratulations";
 import RegisterPasswordData from "./PasswordData";
 import RegisterUserData from "./UserData";
 
 import { UserFormData, PasswordFormData } from "./types";
-
+import { useEffect } from "react";
 
 export default function RegisterPage() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState({
-    userData: {},
-    passwordData: {},
+    userData: {
+      name: '',
+      email: '',
+      schooling: ''
+    },
+    passwordData: {
+      password: '',
+      confirmPassword: ''
+    },
   });
 
   const changeToStep = (step: number) => {
@@ -29,15 +36,17 @@ export default function RegisterPage() {
     setFormData(newFormData);
   };
 
+  useEffect(() => console.log("formData", formData), [formData])
+
   return (
     <>
       {currentStep === 0 && (
-        <RegisterUserData goNext={goNext} submit={submit} />
+        <RegisterUserData goNext={goNext} submit={submit} initialData={formData.userData} />
       )}
       {currentStep === 1 && (
-        <RegisterPasswordData goBack={goBack} goNext={goNext} submit={submit} />
+        <RegisterPasswordData goBack={goBack} goNext={goNext} submit={submit} initialData={formData.passwordData}/>
       )}
-      {currentStep === 2 && <Congratulations goNext={goNext} />}
+      {currentStep === 2 && <Congratulations />}
     </>
   );
 }

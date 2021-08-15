@@ -70,11 +70,7 @@ export default function Login() {
                 type={isPasswordVisible ? "text" : "password"}
                 placeholder="Senha"
                 {...register("password", {
-                  required: "Senha é obrigatória",
-                  minLength: {
-                    value: 5,
-                    message: "Senha deve ter ao mínimo 5 caracteres",
-                  },
+                  required: "Senha é obrigatória"
                 })}
               />
 

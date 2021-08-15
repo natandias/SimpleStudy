@@ -6,4 +6,5 @@ export type UserFormData = {
 
 export type PasswordFormData = {
   password: string;
+  confirmPassword?: string;
 }

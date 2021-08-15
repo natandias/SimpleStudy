@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
+import { FiMail, FiUser } from "react-icons/fi";
 
 import Button from "../../../Button";
 import * as S from "./styles";
@@ -8,9 +9,10 @@ import { PasswordFormData, UserFormData } from "../types"
 type Props = {
   goNext: () => void;
   submit: (data: UserFormData | PasswordFormData) => void;
+  initialData: UserFormData;
 };
 
-export default function RegisterUserData({ goNext, submit }: Props) {
+export default function RegisterUserData({ goNext, submit, initialData}: Props) {
   const {
     register,
     handleSubmit,
@@ -36,15 +38,19 @@ export default function RegisterUserData({ goNext, submit }: Props) {
             <label className="label" htmlFor="name">
               Nome
             </label>
-            <div className="control">
+            <div className="control has-icons-left">
               <input
                 id="name"
                 aria-invalid={errors.name ? "true" : "false"}
                 className="input is-rounded"
                 type="text"
                 placeholder="Nome"
+                defaultValue={initialData.name}
                 {...register("name", { required: "Nome é obrigatório!" })}
               />
+              <span className="icon is-small is-left">
+                <FiUser size="1rem"/>
+              </span>
               {errors.name && (
                 <S.FormErrorText role="alert">
                   {errors?.name?.message}
@@ -57,15 +63,19 @@ export default function RegisterUserData({ goNext, submit }: Props) {
             <label className="label" htmlFor="email">
               Email
             </label>
-            <div className="control">
+            <div className="control has-icons-left">
               <input
                 id="email"
                 aria-invalid={errors.email ? "true" : "false"}
                 className="input is-rounded"
                 type="email"
                 placeholder="Email"
+                defaultValue={initialData.email}
                 {...register("email", { required: "Email é obrigatório!" })}
               />
+              <span className="icon is-small is-left">
+                <FiMail size="1rem"/>
+              </span>
               {errors.email && (
                 <S.FormErrorText role="alert">
                   {errors?.email?.message}
@@ -82,6 +92,7 @@ export default function RegisterUserData({ goNext, submit }: Props) {
               <select
                 id="schooling"
                 aria-invalid={errors.schooling ? "true" : "false"}
+                defaultValue={initialData.schooling}
                 {...register("schooling", {
                   required: "Nível de ensino é obrigatório!",
                   pattern: {
