@@ -1,7 +1,5 @@
+import LoginPage from "../../components/LandingPageSections/LoginPage"
+
 export default function Login() {
-  return (
-    <div>
-      <h1>Login</h1> 
-    </div>
-  )
+  return <LoginPage />
 }

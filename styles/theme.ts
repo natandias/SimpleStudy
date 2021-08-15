@@ -12,6 +12,7 @@ const theme = {
     black: "#000000",
     darkGray: "#595959",
     gray: "#C2C2C2",
+    red: "#e63737"
   },
   spacings: {
     xxsmall: '0.8rem',

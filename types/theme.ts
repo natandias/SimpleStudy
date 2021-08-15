@@ -12,6 +12,7 @@ export type Theme = {
     black: string,
     darkGray: string,
     gray: string,
+    red: string
   }
   spacings: {
     xxsmall: string,

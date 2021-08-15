@@ -1,3 +1,5 @@
+import { useState, useEffect, useRef, useCallback } from "react";
+
 import Heading from "./SectionOne";
 import MiddleSection from "./SectionTwo";
 import QuestionSection from "./SectionThree";
@@ -8,7 +10,7 @@ import * as S from "./styles";
 
 export default function Homepage() {
   return (
-    <S.HomepageContainer>
+    <S.HomepageContainer >
       <Heading />
       <MiddleSection />
       <QuestionSection />

@@ -12,9 +12,7 @@ export default function Navbar({ isMobileMenuOpen, toggleMobileMenu }: Props) {
   const router = useRouter();
 
   const navigateToHome = () => router.push("/");
-
   const navigateToCreateAccount = () => router.push("/register");
-
   const navigateToLogin = () => router.push("/login");
 
   return (
