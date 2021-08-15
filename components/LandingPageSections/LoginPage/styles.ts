@@ -48,6 +48,13 @@ export const FormErrorText = styled.p`
   color: ${({ theme }: Props) => theme.colors.red};
 `;
 
+export const PasswordEyeIcon = styled.span<Props & { isPasswordVisible: boolean }>`
+  cursor: pointer;
+  pointer-events: all !important;
+  color: ${({ theme, isPasswordVisible }) =>
+    isPasswordVisible ? theme.colors.black : theme.colors.gray};
+`;
+
 export const ForgotPasswordLink = styled.a`
   font-size: 1rem;
   margin: 1em auto;
