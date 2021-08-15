@@ -13,7 +13,7 @@ export const Container = styled.div`
   background-position: right 1em top 24em;
 
   ${media.lessThan("medium")`
-    background-position: right -5em top 10em;
+    background-position: right -5em top 27em;
   `}
 `;
 
