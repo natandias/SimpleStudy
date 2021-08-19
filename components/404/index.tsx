@@ -7,7 +7,10 @@ import * as S from "./styles";
 export default function Custom404() {
   const router = useRouter();
 
-  const navigateToHome = () => router.push("/");
+  const navigateToHome = () =>
+    router.asPath.split("/")[1] === "dashboard"
+      ? router.push("/dashboard")
+      : router.push("/");
 
   return (
     <S.Container>
