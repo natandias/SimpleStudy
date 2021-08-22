@@ -6,8 +6,16 @@ import { AppService } from './app.service';
 
 import ormconfig from './ormconfig';
 
+import { UsersModule } from './users/users.module';
+import { SchoolYearsModule } from './schoolYear/schoolYears.module';
+
 @Module({
-  imports: [ConfigModule.forRoot(), TypeOrmModule.forRoot(ormconfig)],
+  imports: [
+    ConfigModule.forRoot(),
+    TypeOrmModule.forRoot(ormconfig),
+    UsersModule,
+    SchoolYearsModule
+  ],
   controllers: [AppController],
   providers: [AppService, ConfigService],
 })

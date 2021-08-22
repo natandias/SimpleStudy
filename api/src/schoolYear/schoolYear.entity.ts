@@ -1,33 +1,31 @@
 import {
   Entity,
   Column,
+  ManyToOne,
   PrimaryGeneratedColumn,
-  OneToMany,
   CreateDateColumn,
   UpdateDateColumn,
   DeleteDateColumn,
 } from 'typeorm';
 
-import { SchoolYear } from '../schoolYear/schoolYear.entity';
+import { User } from '../users/user.entity';
+
 @Entity()
-export class User {
+export class SchoolYear {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  username: string;
+  name: string;
 
   @Column()
-  email: string;
+  periods_amount: number;
 
   @Column()
   password: string;
 
-  @Column()
-  schooling: string;
-
-  @OneToMany(() => SchoolYear, (schoolYear) => schoolYear.user)
-  schoolYears: SchoolYear[];
+  @ManyToOne(() => User, (user) => user.schoolYears)
+  user: User;
 
   @Column({ default: false })
   deleted: boolean;
