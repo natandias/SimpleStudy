@@ -2,35 +2,36 @@ import {
   Entity,
   Column,
   ManyToOne,
-  OneToMany,
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
   DeleteDateColumn,
 } from 'typeorm';
 
-import { User } from '../users/user.entity';
-import { Subject } from '../subject/subject.entity';
+import { SubjectPeriod } from '../subjectPeriod/subjectPeriod.entity';
 
 @Entity()
-export class SchoolYear {
+export class PeriodActivity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @ManyToOne(() => SubjectPeriod, (subjectPeriod) => subjectPeriod.activities)
+  subject: SubjectPeriod;
 
   @Column()
   name: string;
 
-  @Column()
-  periods_amount: number;
+  @Column({ type: 'datetime' })
+  deadline: string;
 
   @Column()
-  password: string;
+  status: string;
 
-  @ManyToOne(() => User, (user) => user.schoolYears)
-  user: User;
+  @Column({ type: 'double' })
+  value: number;
 
-  @OneToMany(() => Subject, (subject) => subject.schoolYear)
-  subjects: Subject[];
+  @Column({ type: 'double' })
+  obtainedValue: number;
 
   @Column({ default: false })
   deleted: boolean;

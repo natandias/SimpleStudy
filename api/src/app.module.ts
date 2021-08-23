@@ -8,8 +8,9 @@ import ormconfig from './ormconfig';
 
 import { UsersModule } from './users/users.module';
 import { SchoolYearsModule } from './schoolYear/schoolYears.module';
-import { PeriodModule } from './period/period.module';
-import { SubjectPeriodModule } from './subject-period/subject-period.module';
+import { PeriodModule } from './subject/subject.module';
+import { SubjectPeriodModule } from './subjectPeriod/subjectPeriod.module';
+import { PeriodActivitiesModule } from './periodActivities/periodActivities.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { SubjectPeriodModule } from './subject-period/subject-period.module';
     SchoolYearsModule,
     PeriodModule,
     SubjectPeriodModule,
+    PeriodActivitiesModule,
   ],
   controllers: [AppController],
   providers: [AppService, ConfigService],

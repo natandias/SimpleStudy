@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PeriodController } from './period.controller';
-import { PeriodService } from './period.service';
+import { PeriodController } from './subject.controller';
+import { PeriodService } from './subject.service';
 
-describe('PeriodController', () => {
+describe('SubjectController', () => {
   let controller: PeriodController;
 
   beforeEach(async () => {

@@ -2,6 +2,7 @@ import {
   Entity,
   Column,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
@@ -9,17 +10,21 @@ import {
 } from 'typeorm';
 
 import { SchoolYear } from '../schoolYear/schoolYear.entity';
+import { SubjectPeriod } from '../subjectPeriod/subjectPeriod.entity';
 
 @Entity()
-export class Period {
+export class Subject {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
   name: string;
 
-  @ManyToOne(() => SchoolYear, (schoolYear) => schoolYear.periods)
+  @ManyToOne(() => SchoolYear, (schoolYear) => schoolYear.subjects)
   schoolYear: SchoolYear;
+
+  @OneToMany(() => SubjectPeriod, (subjectPeriod) => subjectPeriod.subject)
+  periods: SubjectPeriod[];
 
   @Column({ type: 'double' })
   minimumGrade: number;
