@@ -2,35 +2,42 @@ import {
   Entity,
   Column,
   ManyToOne,
-  OneToMany,
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
   DeleteDateColumn,
 } from 'typeorm';
 
-import { User } from '../users/user.entity';
-import { Period } from '../period/period.entity';
+import { SchoolYear } from '../schoolYear/schoolYear.entity';
 
 @Entity()
-export class SchoolYear {
+export class Period {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
   name: string;
 
-  @Column()
-  periods_amount: number;
+  @ManyToOne(() => SchoolYear, (schoolYear) => schoolYear.periods)
+  schoolYear: SchoolYear;
+
+  @Column({ type: 'double' })
+  minimumGrade: number;
+
+  @Column({ type: 'double' })
+  currentGrade: number;
 
   @Column()
-  password: string;
+  color: string;
 
-  @ManyToOne(() => User, (user) => user.schoolYears)
-  user: User;
+  @Column()
+  teacher: string;
 
-  @OneToMany(() => Period, (period) => period.schoolYear)
-  periods: Period[];
+  @Column({ type: 'double' })
+  activitiesPoints: number;
+
+  @Column({ type: 'double' })
+  avaliationsPoints: number;
 
   @Column({ default: false })
   deleted: boolean;

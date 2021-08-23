@@ -8,13 +8,17 @@ import ormconfig from './ormconfig';
 
 import { UsersModule } from './users/users.module';
 import { SchoolYearsModule } from './schoolYear/schoolYears.module';
+import { PeriodModule } from './period/period.module';
+import { SubjectPeriodModule } from './subject-period/subject-period.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(ormconfig),
     UsersModule,
-    SchoolYearsModule
+    SchoolYearsModule,
+    PeriodModule,
+    SubjectPeriodModule,
   ],
   controllers: [AppController],
   providers: [AppService, ConfigService],
