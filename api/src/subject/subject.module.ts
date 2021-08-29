@@ -4,6 +4,6 @@ import { SubjectController } from './subject.controller';
 
 @Module({
   controllers: [SubjectController],
-  providers: [SubjectService]
+  providers: [SubjectService],
 })
 export class PeriodModule {}

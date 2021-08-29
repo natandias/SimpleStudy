@@ -4,6 +4,6 @@ import { PeriodActivitiesController } from './periodActivities.controller';
 
 @Module({
   controllers: [PeriodActivitiesController],
-  providers: [PeriodActivitiesService]
+  providers: [PeriodActivitiesService],
 })
 export class PeriodActivitiesModule {}

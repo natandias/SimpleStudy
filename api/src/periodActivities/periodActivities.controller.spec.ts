@@ -11,7 +11,9 @@ describe('PeriodActivitiesController', () => {
       providers: [PeriodActivitiesService],
     }).compile();
 
-    controller = module.get<PeriodActivitiesController>(PeriodActivitiesController);
+    controller = module.get<PeriodActivitiesController>(
+      PeriodActivitiesController,
+    );
   });
 
   it('should be defined', () => {
