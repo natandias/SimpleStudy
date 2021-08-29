@@ -12,7 +12,6 @@ import { PeriodModule } from './subject/subject.module';
 import { SubjectPeriodModule } from './subjectPeriod/subjectPeriod.module';
 import { PeriodActivitiesModule } from './periodActivities/periodActivities.module';
 import { AuthModule } from './auth/auth.module';
-
 @Module({
   imports: [
     ConfigModule.forRoot(),
