@@ -11,6 +11,7 @@ import { SchoolYearsModule } from './schoolYear/schoolYears.module';
 import { PeriodModule } from './subject/subject.module';
 import { SubjectPeriodModule } from './subjectPeriod/subjectPeriod.module';
 import { PeriodActivitiesModule } from './periodActivities/periodActivities.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { PeriodActivitiesModule } from './periodActivities/periodActivities.modu
     PeriodModule,
     SubjectPeriodModule,
     PeriodActivitiesModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService, ConfigService],
