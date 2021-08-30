@@ -3,6 +3,7 @@ import {
   Column,
   PrimaryGeneratedColumn,
   OneToMany,
+  JoinTable,
   CreateDateColumn,
   UpdateDateColumn,
   DeleteDateColumn,
@@ -14,10 +15,10 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({ unique: true })
   username: string;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
 
   @Column()
@@ -26,11 +27,11 @@ export class User {
   @Column()
   schooling: string;
 
-  @OneToMany(() => SchoolYear, (schoolYear) => schoolYear.user)
-  schoolYears: SchoolYear[];
-
-  @Column({ default: false })
-  deleted: boolean;
+  @OneToMany(() => SchoolYear, (schoolYear) => schoolYear.user, {
+    cascade: true,
+  })
+  @JoinTable()
+  schoolYears: Promise<SchoolYear[]>;
 
   @CreateDateColumn()
   createdAt: Date;

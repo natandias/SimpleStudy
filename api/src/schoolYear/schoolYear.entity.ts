@@ -7,6 +7,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   DeleteDateColumn,
+  JoinColumn,
 } from 'typeorm';
 
 import { User } from '../users/user.entity';
@@ -21,19 +22,17 @@ export class SchoolYear {
   name: string;
 
   @Column()
-  periods_amount: number;
-
-  @Column()
-  password: string;
+  periodsAmount: number;
 
   @ManyToOne(() => User, (user) => user.schoolYears)
+  @JoinColumn({ name: 'userId' })
   user: User;
+
+  @Column()
+  userId: string;
 
   @OneToMany(() => Subject, (subject) => subject.schoolYear)
   subjects: Subject[];
-
-  @Column({ default: false })
-  deleted: boolean;
 
   @CreateDateColumn()
   createdAt: Date;
