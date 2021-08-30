@@ -44,9 +44,6 @@ export class Subject {
   @Column({ type: 'double' })
   avaliationsPoints: number;
 
-  @Column({ default: false })
-  deleted: boolean;
-
   @CreateDateColumn()
   createdAt: Date;
 

@@ -33,9 +33,6 @@ export class PeriodActivity {
   @Column({ type: 'double' })
   obtainedValue: number;
 
-  @Column({ default: false })
-  deleted: boolean;
-
   @CreateDateColumn()
   createdAt: Date;
 
