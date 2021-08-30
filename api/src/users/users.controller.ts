@@ -3,18 +3,22 @@ import {
   Get,
   Post,
   Body,
+  Query,
   Patch,
   Param,
   Delete,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
 
 import { CreateUserDto } from './dto/createUser.dto';
 import { UpdateUserDto } from './dto/updateUser.dto';
+import { FindOneUserDto } from './dto/FindOneUserDto.dto';
 import { User } from './user.entity';
 
 import { UsersService } from './users.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { NotFoundInterceptor } from '../interceptors/notFoundInterceptor';
 
 @Controller('users')
 @UseGuards(JwtAuthGuard)
@@ -32,8 +36,9 @@ export class UsersController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usersService.findOne(id);
+  @UseInterceptors(new NotFoundInterceptor('User not found!'))
+  findOne(@Param('id') id: string, @Query() query: FindOneUserDto) {
+    return this.usersService.findOne(id, query);
   }
 
   @Patch(':id')

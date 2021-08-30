@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { User } from './user.entity';
 import { CreateUserDto } from './dto/createUser.dto';
 import { UpdateUserDto } from './dto/updateUser.dto';
+import { FindOneUserDto } from './dto/FindOneUserDto.dto';
 
 @Injectable()
 export class UsersService {
@@ -16,8 +17,16 @@ export class UsersService {
     return this.usersRepository.find();
   }
 
-  async findOne(id: string): Promise<User> {
-    return this.usersRepository.findOneOrFail(id);
+  async findOne(id: string, findOneUserDto?: FindOneUserDto): Promise<User> {
+    const { includeSchoolYears } = findOneUserDto;
+    const relations = [];
+    if (includeSchoolYears && includeSchoolYears === 'true')
+      relations.push('schoolYears');
+
+    return this.usersRepository.findOne({
+      where: { id, deletedAt: null },
+      relations,
+    });
   }
 
   async findByEmail(email: string): Promise<User> {
@@ -42,6 +51,6 @@ export class UsersService {
   }
 
   async remove(id: string): Promise<void> {
-    await this.usersRepository.delete(id);
+    await this.usersRepository.softDelete(id);
   }
 }
